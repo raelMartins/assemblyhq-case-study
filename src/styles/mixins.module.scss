@@ -1,0 +1,37 @@
+// MEDIA QUERIES PER SCREEN SIZE
+
+@mixin smallphone {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin largephone {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin minilaptop {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin largelaptop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1536px) {
+    @content;
+  }
+}

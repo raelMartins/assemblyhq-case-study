@@ -1,0 +1,29 @@
+@import './mixins.module.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font_poppins);
+  ::selection {
+    color: #777777;
+    background-color: #e1e1e1;
+  }
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth !important;
+}
+body {
+  font-size: 1.6rem;
+}
+input,
+button,
+textarea {
+  font-family: var(--font_poppins);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
