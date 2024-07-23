@@ -86,11 +86,13 @@ export default function Home({
               e.preventDefault();
               refetch();
             }}
+            role="search"
           >
             <input
               type="text"
               value={search}
               onChange={(e: BaseSyntheticEvent) => setSearch(e.target.value)}
+              aria-label="keyword"
             />
             <button>Go</button>
           </form>
@@ -116,11 +118,11 @@ export default function Home({
             </ul>
           ) : !data ? (
             <div className={styles.text_display}>
-              <h4>Start Searching</h4>
+              <h2>Start Searching</h2>
             </div>
           ) : search && data?.length == 0 ? (
             <div className={styles.text_display}>
-              <h4>Nothing Found</h4>
+              <h2>Nothing Found</h2>
             </div>
           ) : data?.length > 0 ? (
             <ul className={styles.search_results}>
@@ -130,7 +132,7 @@ export default function Home({
             </ul>
           ) : isError ? (
             <div className={styles.text_display}>
-              <h4>An error has occurred</h4>
+              <h2>An error has occurred</h2>
             </div>
           ) : null}
 
