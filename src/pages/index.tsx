@@ -35,7 +35,7 @@ export default function Home({
     enabled: !search,
   });
 
-  const list = loading ? Array(10).fill('') : data || [];
+  const list = loading ? Array(30).fill('') : data || [];
 
   const fetch_results = async () => {
     try {
@@ -108,7 +108,13 @@ export default function Home({
               Organisation
             </button>
           </div>
-          {!data ? (
+          {loading ? (
+            <ul className={styles.search_results}>
+              {list?.map((result: any) => (
+                <SearchItem key={result.id} result={result} loading={true} />
+              ))}
+            </ul>
+          ) : !data ? (
             <div className={styles.text_display}>
               <h4>Start Searching</h4>
             </div>
@@ -172,7 +178,6 @@ const SearchItem = ({result, loading}: {result?: any; loading?: boolean}) => {
       <SkeletonText
         mt="0rem"
         flex={`1`}
-        pr={`1rem`}
         noOfLines={2}
         spacing="4"
         skeletonHeight="3"
